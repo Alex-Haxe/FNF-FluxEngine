@@ -2,7 +2,8 @@ name: build
 run-name: exe
 
 on:
-  push:
+  #push:
+  workflow_dispatch:
 
 jobs:
   win:

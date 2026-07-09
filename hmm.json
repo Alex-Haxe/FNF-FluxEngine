@@ -11,6 +11,11 @@
       "version": ""
     },
     {
+      "name": "openfl",
+      "type": "haxelib",
+      "version": ""
+    },
+    {
       "name": "hxcpp",
       "type": "haxelib",
       "version": ""

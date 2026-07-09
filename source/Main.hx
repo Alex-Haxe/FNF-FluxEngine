@@ -10,6 +10,6 @@ class Main extends Sprite
 	{
 		super();
 
-		addChild(new FlxGame(1280, 720, TitleState, 60, 60, true));
+		addChild(new FlxGame(1280, 720, TitleState, 0, 0, true));
 	}
 }

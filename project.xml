@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+
+    <meta
+        title="FluxEngine"
+        package="com.alexhaxe.flux"
+        version="1.0.0"
+        company="AlexHaxe" />
+
+    <app
+        main="Main"
+        file="FluxEngine" />
+
+    <window
+        width="1280"
+        height="720"
+        fps="0"
+        background="#000000"
+        hardware="true"
+        vsync="true" />
+
+    <source path="source" />
+
+    <assets path="assets" rename="assets" />
+    
+    <haxelib name="lime" />
+    <haxelib name="openfl" />
+    <haxelib name="flixel" />
+    <haxelib name="flixel-addons" />
+    <haxelib name="flixel-ui" />
+    <haxelib name="hxcpp" />
+</project>

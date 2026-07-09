@@ -1,0 +1,32 @@
+name: build
+run-name: exe
+
+on:
+  push:
+
+jobs:
+  win:
+    runs-on: windows-latest
+
+    steps:
+      - name: get
+        uses: actions/checkout@v4
+      - name: haxe
+        uses: krdlab/setup-haxe@v1
+        with:
+          haxe-version: 4.3.7
+      - name: hmm
+        run: |
+          haxelib install hmm --quiet
+          haxelib run hmm install
+      - name: lime
+        run: |
+          haxelib run lime setup
+          haxelib run lime setup windows
+      - name: make
+        run: haxelib run lime build windows -release
+      - name: save
+        uses: actions/upload-artifact@v4
+        with:
+          name: app
+          path: export/release/windows/bin/*.exe

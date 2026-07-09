@@ -1,0 +1,26 @@
+name: Submodule
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: 'Repo'
+        required: true
+        type: string
+      msg:
+        description: 'Desc'
+        required: true
+        type: string
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git submodule add ${{ inputs.repo }} assets
+          git commit -m "${{ inputs.msg }}"
+          git push
